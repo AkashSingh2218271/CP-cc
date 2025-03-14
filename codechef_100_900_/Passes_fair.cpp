@@ -1,35 +1,20 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
     int t;
     cin >> t;
-
-    while (t--)
-    {
-        int n, k, last_i = -1, prefixSum = 0;
+    
+    while (t--) {
+        int n, k;
         cin >> n >> k;
-        vector<int> coin(n);
-
-        for (int i = 0; i < n; i++) {
-            cin >> coin[i];
-        }
         
-        sort(coin.begin(), coin.end(), greater<int>());
-        for (int i = 0; i < n; i++) {
-            prefixSum += coin[i];
-            if (prefixSum == k) {
-                break;
-            } else if (prefixSum > k) {
-                prefixSum -= coin[i];
-                break;
-            }
+        if (k >= n+1) {
+            cout << "yes\n";
+        } else {
+            cout << "no\n";
         }
-        
-        cout << k - prefixSum << endl;
     }
-
+    
     return 0;
 }
