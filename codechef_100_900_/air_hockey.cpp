@@ -11,20 +11,17 @@ int main() {
 	cin >> t;
 	
 	// Loop that runs t times, handling each test case
-	while (t--)
-	{
-		// Declare variable x to store the number of hours spent watching
-		int x;
-		// Read the number of hours from input
-		cin >> x;
-		// Check if watching time exceeds 24 hours
-		if (x > 24) {
-			// Output "yes" if watching time is unhealthy
-			cout << "yes\n";
-		} else {
-			// Output "no" if watching time is within limits
-			cout << "no\n";
-		}
+	while (t--) {
+		// Declare variables a and b to store the scores of both players
+		int a, b;
+		// Read the scores of both players from standard input
+		cin >> a >> b;
+		
+		// Calculate minimum points needed to win:
+		// 7 is the winning score, subtract the maximum of current scores
+		int min_points = 7 - max(a, b);
+		// Output the minimum points needed and add a newline
+		cout << min_points << endl;
 	}
 	
 	// Return 0 to indicate successful program execution
